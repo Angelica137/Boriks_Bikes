@@ -16,13 +16,11 @@ describe DockingStation do
     bike = Bike.new
     expect(subject.dock_bike(bike)).to eq(bike)
   end
-
-  it { is_expected.to respond_to :bike? }
   
   it 'tells the user if there is a bike in the docking station' do
     bike = Bike.new
     subject.dock_bike(bike)
-    expect(subject.bike?).to eq(bike)
+    expect(subject.bike).to eq bike
   end
 
 end
