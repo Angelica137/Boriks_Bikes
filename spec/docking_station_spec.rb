@@ -4,10 +4,12 @@ describe DockingStation do
 
   it { is_expected.to respond_to :release_bike }
   
-  it 'releases a bike from the docking station' do
-    bike = Bike.new
-    subject.dock_bike(bike)
-    expect(subject.release_bike).to eq(bike)
+  describe '#release_bike' do
+    it 'releases a bike from the docking station' do
+      bike = Bike.new
+      subject.dock_bike(bike)
+      expect(subject.release_bike).to eq(bike)
+    end
   end
   
   it 'confirms if the bike is working' do
@@ -17,18 +19,21 @@ describe DockingStation do
     expect(bike).to be_working
   end
   
-
   it { is_expected.to respond_to :dock_bike }
   it { is_expected.to respond_to(:dock_bike).with(1).argument }
 
-  it 'accepts a bike from a user and stores it' do
-    bike = Bike.new
-    expect(subject.dock_bike(bike)).to eq([bike])
+  describe "#dock_bike" do
+    it 'accepts a bike from a user and stores it' do
+      bike = Bike.new
+      expect(subject.dock_bike(bike)).to eq([bike])
+    end
   end
   
-  it 'tells the user if there is a bike in the docking station' do
-    bike_stands = []
-    expect{ subject.release_bike }. to raise_error "There are no bikes here"
+  describe "#release_bike" do
+    it 'tells the user if there is a bike in the docking station' do
+      bike_stands = []
+      expect{ subject.release_bike }. to raise_error "There are no bikes here"
+    end
   end
 
 end
