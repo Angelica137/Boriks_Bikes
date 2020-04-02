@@ -17,7 +17,6 @@ class DockingStation
   end
   
   def dock_bike(bike)
-    capacity = 12
     if bike_stands.length == capacity
       raise "Docking station full"
     else

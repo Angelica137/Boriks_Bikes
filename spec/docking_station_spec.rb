@@ -37,11 +37,9 @@ describe DockingStation do
   end
 
   describe "#dock_bike" do
-    xit 'prevents docking bikes above capacity' do
+    it 'prevents docking bikes above capacity' do
       bike = Bike.new
-      capacity = 12
-      bike_stands = (1..12).to_a
-      bike_stands.length == capacity
+      20.times { subject.dock_bike(bike)}
       expect{ subject.dock_bike(bike) }.to raise_error "Docking station full"
     end
   end
