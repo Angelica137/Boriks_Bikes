@@ -32,17 +32,14 @@ describe DockingStation do
   describe "#release_bike" do
     it 'tells the user if there is a bike in the docking station' do
       bike_stands = []
-      expect{ subject.release_bike }.to raise_error "There are no bikes here"
+      expect{ subject.release_bike }.to raise_error "There are no bikes"
     end
   end
 
   describe "#dock_bike" do
     it 'prevents docking bikes above capacity' do
-      bike = Bike.new
-      DockingStation::DEFAULT_CAPACITY.times do
-        subject.dock_bike(bike)
-      end
-        expect{ subject.dock_bike(bike) }.to raise_error "Docking station full"
+      subject.capacity.times { subject.dock_bike double :bike }
+      expect{ subject.dock_bike double :bike }.to raise_error "Docking station full"
     end
   
 
