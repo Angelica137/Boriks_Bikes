@@ -1,12 +1,10 @@
 class Bike
-  
-  attr_reader :condition
-  
-  def initialize(condition = 'working')
-    @condition = condition
-  end
 
-  def working?
-    true
+  def report_broken
+    @broken = true
+  end
+  
+  def broken?
+    @broken
   end
 end
