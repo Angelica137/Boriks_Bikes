@@ -17,7 +17,7 @@ class DockingStation
   end
   
   def dock_bike(bike)
-    if bike_stands.length == capacity
+    if bike_stands.length >= capacity
       raise "Docking station full"
     else
       @bike = bike
