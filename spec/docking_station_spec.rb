@@ -37,15 +37,20 @@ describe DockingStation do
   end
 
   describe "#dock_bike" do
-    it 'prevents docking bikes above capacity' do
+    xit 'prevents docking bikes above capacity' do
       bike = Bike.new
-      20.times { subject.dock_bike(bike)}
-      expect{ subject.dock_bike(bike) }.to raise_error "Docking station full"
+      DockingStation::DEFAULT_CAPACITY.times do
+        subject.dock_bike(bike)
+#      20.times { subject.dock_bike(bike)}
+        expect{ subject.dock_bike(bike) }.to raise_error "Docking station full"
+      end
     end
-  end
+  
 
-  it 'states the default capacity of a docking station' do
-    expect(subject.capacity).to eq 20
-  end
-
+    it 'states the default capacity of a docking station' do
+      DockingStation::DEFAULT_CAPACITY.times do
+        expect(subject.capacity).to eq 20
+      end
+    end
+  end 
 end
