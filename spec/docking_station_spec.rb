@@ -51,5 +51,10 @@ describe DockingStation do
         expect(subject.capacity).to eq 20
       end
     end
+
+    it 'states the capacity of a docking station' do
+      d = DockingStation.new(100)
+      expect(d.capacity).to eq 100
+    end
   end 
 end
