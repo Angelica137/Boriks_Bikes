@@ -6,13 +6,20 @@ describe DockingStation do
     it { is_expected.to respond_to :release_bike }
   
     it 'releases a bike from the docking station' do
+      #HERE
       bike = Bike.new
       subject.dock_bike(bike)
       expect(subject.release_bike).to eq(bike)
     end
+
+  it 'confirms the bike is wokring' do
+    subject.dock_bike(Bike.new)
+    bike = subject.release_bike
+    expect(bike).to be_working
   end
   
-  it 'confirms if the bike is working' do
+  it 'confirms if the bike not be broken' do
+    #HERE
     bike = Bike.new
     subject.dock_bike(bike)
     subject.release_bike
@@ -24,6 +31,7 @@ describe DockingStation do
 
   describe "#dock_bike" do
     it 'accepts a bike from a user and stores it' do
+      #HERE
       bike = Bike.new
       expect(subject.dock_bike(bike)).to eq([bike])
     end
@@ -58,10 +66,12 @@ describe DockingStation do
   describe '#release_bike' do
     it 'prevents broken bike being released' do
       d = DockingStation.new
+      #HERE
       bike = Bike.new
       bike.report_broken
       d.dock_bike(bike)
       expect{ d.release_bike }.to raise_error "Bike is broken"
     end
   end
+end
 end
