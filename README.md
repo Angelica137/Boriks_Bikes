@@ -48,3 +48,11 @@ required for the bike sharing scheme to run.
 18.b  As a maintainer of the system,
       So that I can manage broken bikes and not disappoint users,
       I'd like docking stations not to release broken bikes.
+
+20.a  As a maintainer of the system,
+      So that I can manage broken bikes and not disappoint users,
+      I'd like vans to take broken bikes from docking stations and deliver them to garages to be fixed.
+
+20.b  As a maintainer of the system,
+      So that I can manage broken bikes and not disappoint users,
+      I'd like vans to collect working bikes from garages and distribute them to docking stations.
