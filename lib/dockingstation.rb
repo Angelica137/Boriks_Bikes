@@ -13,7 +13,7 @@ class DockingStation
   
   def release_bike
       raise "There are no bikes" if empty?
-      raise "Bike is broken" 
+      raise "Bike is broken" if bike.broken?
       bike
   end
   

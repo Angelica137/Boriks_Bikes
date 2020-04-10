@@ -12,4 +12,8 @@ describe Van do
     expect(subject.collect_broken_bike).to eq 'bike is broken'
   end
 
+  it "collects bike if broken" do
+    bike = double(:bike, broken?: true)
+    expect(subject.collect_broken_bike(bike)).to eq ([bike])
+  end
 end
