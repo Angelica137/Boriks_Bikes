@@ -23,7 +23,6 @@ describe DockingStation do
 
   describe "#dock_bike" do
     it 'accepts a bike from a user and stores it' do
-      #bike = double(:bike)
       expect(subject.dock_bike(bike)).to eq([bike])
     end
   end

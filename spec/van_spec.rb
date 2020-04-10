@@ -1,8 +1,15 @@
 require 'van'
 
 describe Van do
-  describe '#collect_broken_bikes' do
-    it { is_expected.to respond_to :collect_broken_bikes }
+  let(:bike) { double :bike }
+
+  describe '#collect_broken_bike' do
+    it { is_expected.to respond_to :collect_broken_bike }
   end
   
+  it "checks if bike is broken" do
+    bike = double(:bike, broken?: true)
+    expect(subject.collect_broken_bike).to eq 'bike is broken'
+  end
+
 end
