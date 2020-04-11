@@ -25,6 +25,9 @@ describe Van do
     expect(subject.deliver_broken_bikes).to eq([])
   end
 
-
+  it 'raises errors if the van has no broken bikes' do
+    broken_bikes = []
+    expect{ subject.deliver_broken_bikes }.to raise_error "no broken bikes today"
+  end
 
   end
