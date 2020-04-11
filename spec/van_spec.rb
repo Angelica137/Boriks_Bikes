@@ -22,7 +22,7 @@ describe Van do
 
   it 'drops off the broken bikes' do
     broken_bikes = [:bike]
-    expect(subject.deliver_broken_bikes).to eq([])
+    allow(subject).to receive(:deliver_broken_bikes).and_return :bike
   end
 
   it 'raises errors if the van has no broken bikes' do

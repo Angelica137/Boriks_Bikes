@@ -24,7 +24,11 @@ class Van
   end
 
   def deliver_broken_bikes
-    #raise "no broken bikes today" if broken_bikes.empty? 
-    broken_bikes = []  
+    raise "no broken bikes today" if empty? 
+    bike
+  end
+
+  def empty?
+    broken_bikes == []
   end
 end
