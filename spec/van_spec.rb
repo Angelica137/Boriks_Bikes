@@ -19,5 +19,10 @@ describe Van do
   describe '#deliver_broken_bikes' do
     it { is_expected.to respond_to :deliver_broken_bikes }
   end
-  
+
+  it 'drops off the broken bikes' do
+    broken_bikes = [:bike]
+    expect(subject.deliver_broken_bikes(broken_bikes)).to eq nil
+  end
+
   end
