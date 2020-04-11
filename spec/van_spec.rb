@@ -22,7 +22,9 @@ describe Van do
 
   it 'drops off the broken bikes' do
     broken_bikes = [:bike]
-    expect(subject.deliver_broken_bikes(broken_bikes)).to eq nil
+    expect(subject.deliver_broken_bikes).to eq([])
   end
+
+
 
   end
