@@ -5,7 +5,7 @@ class Van
   attr_reader :bike, :bikes
 
   def initialize
-    @bikes = []
+    @bikes = [Bike]
     @bike = Bike.new
   end
   

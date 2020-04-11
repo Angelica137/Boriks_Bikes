@@ -13,8 +13,11 @@ describe Van do
   end
 
   it "collects bike if broken" do
-    #bike = Bike.new
-    #bike.report_broken
-    expect(subject.collect_broken_bike).to eq :bike
+    allow(subject).to receive(:collect_broken_bike).and_return :bike
   end
-end
+
+  describe '#deliver_broken_bikes' do
+    it { is_expected.to respond_to :deliver_broken_bikes }
+  end
+  
+  end
